@@ -1,0 +1,10 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: hv-administration
+  cloud:
+    config:
+      uri: http://localhost:8001
+      profile: dev
+      fail-fast: true

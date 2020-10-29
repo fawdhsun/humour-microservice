@@ -1,0 +1,15 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: hv-conifgserver
+  cloud:
+    config:
+      server:
+        git:
+          default-label: master
+          uri: http://10.60.253.36/hv/houmourv.git
+          search-paths:
+            - config
+          username: humour
+          password: 123456789
