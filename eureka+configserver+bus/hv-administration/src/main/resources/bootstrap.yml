@@ -1,0 +1,25 @@
+server:
+  port: 8088
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: hv-administration
+  cloud:
+    config:
+      uri: http://localhost:8001
+      profile: dev
+      fail-fast: true
+    bus:
+      id: ${spring.application.name}:${spring.cloud.config.profile}:${random.value}
+  rabbitmq:
+    host: 10.60.25.178
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: my_vhost
+logging:
+  level:
+    org.springframework.cloud.bus: debug
